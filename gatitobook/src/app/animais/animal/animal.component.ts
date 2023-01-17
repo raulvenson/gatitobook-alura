@@ -1,6 +1,7 @@
+import { environment } from './../../../environments/environment';
 import { Component, Input, OnInit } from '@angular/core';
 
-const API = 'http://localhost:3000';
+const API = environment.apiURL;
 
 @Component({
   selector: 'app-animal',
@@ -10,7 +11,7 @@ const API = 'http://localhost:3000';
 export class AnimalComponent implements OnInit {
   private urlOriginal = '';
 
-  @Input() descicao = '';
+  @Input() descricao = '';
 
   @Input() set url(url: string) {
     if (url.startsWith('data')) {
